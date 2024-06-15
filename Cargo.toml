@@ -1,0 +1,27 @@
+[package]
+name = "typenum_mappings"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+rust-version = "1.63"
+repository = "https://github.com/GnomedDev/typenum_mappings"
+description = "A proc-macro to generate mappings from typenum's `UInt` types to your own type."
+categories = ["development-tools"]
+keywords = ["proc-macro", "typenum"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "1.0.85"
+quote = "1.0.36"
+to-arraystring = "0.2.0"
+
+[dependencies.syn]
+version = "2.0.66"
+default-features = false
+features = ["parsing", "printing", "full", "extra-traits", "proc-macro"]
+
+[dev-dependencies]
+typenum = { version = "1.17.0", features = ["const-generics"] }
+arrayvec = "0.7.4"
